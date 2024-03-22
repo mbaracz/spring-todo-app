@@ -10,7 +10,7 @@
     let loading = true;
 
     async function fetchTodoList(id: string) {
-        fetch(`http://localhost:8082/api/todos/${id}`)
+        fetch(import.meta.env.VITE_ENDPOINT_URL + id)
             .then(response => {
                 if (response.status === 404) {
                     localStorage.removeItem("todoListId");
